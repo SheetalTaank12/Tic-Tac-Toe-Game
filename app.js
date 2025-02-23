@@ -28,8 +28,29 @@ boxes.forEach((box)=>{
         }
         box.disabled = true;
         checkWinner();
+        checkDraw();
     });
 });
+
+const checkDraw = () => {
+    let isDraw = true;
+    boxes.forEach((box) => {
+        if (box.innerText === "") {
+            isDraw = false;
+        }
+    });
+    if (isDraw) {
+        msg.innerText = "It's a Draw! ";
+        msgContainer.classList.remove("hide");
+        resetbtn.disabled= true;
+        boxes.forEach((box)=>{
+           
+            box.disabled = true;
+        });
+    
+    }
+};
+
 
 const checkWinner= ()=>{
     for(let pattern of winPatterns){
