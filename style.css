@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #6B2737;
+    text-align: center;
+}
+.container{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.game{
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+    border: 3px solid black;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 5px 5px 1px rgba(0, 0, 0, 0.5);
+
+    
+}
+h1{
+    color: rgb(255, 255, 95);
+    font-size: 3rem;
+}
+.box{
+    background-color: #f8f4a6;
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 5px 5px 1px rgba(0, 0, 0, 0.5);
+    font-size: 8vmin;
+    color: #270014;
+    
+}
+#reset,#new{
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: rgb(255, 255, 95);
+    color: #270014;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 5px 5px 1px rgba(0, 0, 0, 0.5);
+
+}
+.hide{
+    display: none;
+
+}
+#msg{
+    color : #f8f4a6;
+    font-size: 8vmin;
+}
+.msg-container{
+    height: 20vmin;
+}
+
+/* Smooth transitions for a better feel */
+.box, #reset, #new {
+    transition: all 0.3s ease-in-out;
+}
+
+.box:hover {
+    transform: scale(1.05);
+    background-color: #ffe984;
+}
+
+#reset:hover, #new:hover {
+    background-color: #ffe984;
+    transform: translateY(-3px);
+}  
+
+/* Improve visibility of the winner message */
+.msg-container {
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+#msg {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+/* Media Queries for Responsiveness */
+
+/* For small smartphones */
+@media (max-width: 480px) {
+    .game {
+        height: 90vmin;
+        width: 90vmin;
+        gap: 2vmin;
+    }
+    .box {
+        height: 25vmin;
+        width: 25vmin;
+        font-size: 10vmin;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    #reset, #new {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+    #msg {
+        font-size: 6vmin;
+    }
+}
+
+/* For tablets and medium devices */
+@media (max-width: 768px) {
+    .game {
+        height: 70vmin;
+        width: 70vmin;
+        gap: 2vmin;
+    }
+    .box {
+        height: 20vmin;
+        width: 20vmin;
+        font-size: 9vmin;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    #reset, #new {
+        font-size: 1.1rem;
+        padding: 0.9rem;
+    }
+}
+
+/* For laptops and larger tablets */
+@media (max-width: 1024px) {
+    .game {
+        height: 65vmin;
+        width: 65vmin;
+    }
+    .box {
+        height: 19vmin;
+        width: 19vmin;
+    }
+}
+
+/* For large desktops */
+@media (min-width: 1025px) {
+    .game {
+        height: 50vmin;
+        width: 50vmin;
+    }
+    .box {
+        height: 15vmin;
+        width: 15vmin;
+        font-size: 7vmin;
+    }
+}  
