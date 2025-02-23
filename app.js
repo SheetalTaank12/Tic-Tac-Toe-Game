@@ -4,6 +4,7 @@ let newbtn = document.querySelector("#new");
 let msgContainer = document.querySelector(".msg-container");
 let msg = document.querySelector("#msg");
 let turnO = true;
+let winnerDeclared = false;
 
 const winPatterns = [
     [0,1,2],
@@ -40,16 +41,25 @@ const checkDraw = () => {
         }
     });
     if (isDraw) {
-        msg.innerText = "It's a Draw! ";
-        msgContainer.classList.remove("hide");
-        resetbtn.disabled= true;
-        boxes.forEach((box)=>{
-           
-            box.disabled = true;
-        });
-    
+        
+        checkWinner(); 
+
+        if ( winnerDeclared=== true){
+            console.log("Game finished");
+        }
+            else {
+                msg.innerText = "It's a Draw! ";
+            msgContainer.classList.remove("hide");
+            resetbtn.disabled= true;
+            boxes.forEach((box)=>{
+               
+                box.disabled = true;
+            });
+        }
+        
+        
+        }
     }
-};
 
 
 const checkWinner= ()=>{
@@ -66,6 +76,7 @@ const checkWinner= ()=>{
         if(pos1val != "" && pos2val != "" && pos3val != ""){
             if(pos1val === pos2val && pos2val === pos3val){
                 console.log("winner",pos1val);
+                winnerDeclared = true;
                 showWinner(pos1val);
 
             }
@@ -94,6 +105,7 @@ newbtn.addEventListener("click",()=>{
     });
     msgContainer.classList.add("hide");
     resetbtn.disabled=false;
+    winnerDeclared = false;
 
 });
 
