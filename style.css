@@ -65,14 +65,11 @@ h1{
 }
 
 /* Smooth transitions for a better feel */
-.box, #reset, #new {
+#reset, #new {
     transition: all 0.3s ease-in-out;
 }
 
-.box:hover {
-    transform: scale(1.05);
-    background-color: #ffe984;
-}
+
 
 #reset:hover, #new:hover {
     background-color: #ffe984;
